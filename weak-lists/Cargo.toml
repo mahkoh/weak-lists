@@ -1,0 +1,18 @@
+[package]
+name = "weak-lists"
+version = "0.1.0"
+edition = "2021"
+description = "Lists with weak references and concurrent iteration and modification"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/mahkoh/weak-lists"
+readme = "../README.md"
+keywords = ["no_std"]
+categories = ["data-structures", "no-std"]
+
+[features]
+default = ["sync"]
+sync = ["dep:parking_lot"]
+
+[dependencies]
+stable-map = { version = "0.15", default-features = false, features = ["default-hasher"] }
+parking_lot = { version = "0.12", default-features = false, optional = true }
